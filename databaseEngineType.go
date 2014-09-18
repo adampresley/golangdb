@@ -5,19 +5,19 @@ type DatabaseEngine int
 
 /* Constants used to specify a type of database connection */
 const (
-	_ DatabaseEngine = iota
+	NONE DatabaseEngine = iota
 	SQLITE
 	MYSQL
 	MSSQL
 )
 
-databaseEngineNames := []string{
-	"None",
-	"SQLite",
-	"MySQL",
-	"MSSQL"
+var databaseEngineNames = map[DatabaseEngine]string{
+	NONE:   "None",
+	SQLITE: "SQLite",
+	MYSQL:  "MySQL",
+	MSSQL:  "MSSQL",
 }
 
 func (this *DatabaseEngine) ToString() string {
-	return databaseEngineNames[this]
+	return databaseEngineNames[*this]
 }
