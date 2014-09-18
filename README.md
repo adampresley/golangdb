@@ -70,7 +70,7 @@ if err := connection.Connect(); err != nil {
 // Database handle now lives in golangdb.Db
 ```
 
-### License
+## License
 The MIT License (MIT)
 
 Copyright (c) 2014 Adam Presley
