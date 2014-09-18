@@ -3,11 +3,12 @@ package golangdb
 import (
 	"database/sql"
 	"log"
+	"os"
 
 	_ "github.com/mattn/go-sqlite3"
 )
 
-func ConnectSQLite(connectionInfo DatabaseConnection) (*sql.DB, error) {
+func ConnectSQLite(connectionInfo *DatabaseConnection) (*sql.DB, error) {
 	/*
 	 * Create the connection
 	 */
@@ -21,6 +22,6 @@ func ConnectSQLite(connectionInfo DatabaseConnection) (*sql.DB, error) {
 	return db, nil
 }
 
-func DropSQLite(connectionInfo DatabaseConnection) {
+func DropSQLite(connectionInfo *DatabaseConnection) {
 	os.Remove(connectionInfo.ToString())
 }

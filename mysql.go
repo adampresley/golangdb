@@ -16,7 +16,7 @@ a DatabaseConnection structure. Please note that this method
 respects the environment variable max_connections, and
 will default to "151" if it is not present.
 */
-func ConnectMySQL(connectionInfo DatabaseConnection) (*sql.DB, error) {
+func ConnectMySQL(connectionInfo *DatabaseConnection) (*sql.DB, error) {
 	/*
 	 * Create the connection
 	 */

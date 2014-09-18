@@ -12,7 +12,7 @@ This method establishes a connection to a MSSQL database
 server. The connection details are stored and sent via
 a DatabaseConnection structure.
 */
-func ConnectMSSQL(connectionInfo DatabaseConnection) (*sql.DB, error) {
+func ConnectMSSQL(connectionInfo *DatabaseConnection) (*sql.DB, error) {
 	/*
 	 * Create the connection
 	 */
