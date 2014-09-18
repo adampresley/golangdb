@@ -38,6 +38,10 @@ func (this *DatabaseConnection) Connect() error {
 		db, err = ConnectMSSQL(this)
 	}
 
+	if err != nil {
+		return err
+	}
+
 	Db = db
 	return nil
 }
@@ -57,6 +61,8 @@ func (this *DatabaseConnection) ToString() string {
 	case MSSQL:
 		return this.toMSSQLString()
 	}
+
+	return ""
 }
 
 func (this *DatabaseConnection) toMySQLString() string {
