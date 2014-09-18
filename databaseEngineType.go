@@ -5,8 +5,8 @@ type DatabaseEngine int
 
 /* Constants used to specify a type of database connection */
 const (
-	_ = iota
-	SQLITE DatabaseEngine
+	_ DatabaseEngine = iota
+	SQLITE
 	MYSQL
 	MSSQL
 )
