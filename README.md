@@ -19,11 +19,11 @@ connection := DatabaseConnection{
     Password: "password",
 }
 
-if err := connection.Connect(); err != nil {
+if err := connection.Connect("main"); err != nil {
     log.Fatalf("Error connecting to database: %s", err.Error())
 }
 
-// Database handle now lives in golangdb.Db
+// Database handle now lives in golangdb.Db["main"]
 ```
 
 ## MSSQL
@@ -43,11 +43,11 @@ connection := DatabaseConnection{
     Password: "password",
 }
 
-if err := connection.Connect(); err != nil {
+if err := connection.Connect("main"); err != nil {
     log.Fatalf("Error connecting to database: %s", err.Error())
 }
 
-// Database handle now lives in golangdb.Db
+// Database handle now lives in golangdb.Db["main"]
 ```
 
 ## SQLite
@@ -63,11 +63,30 @@ connection := DatabaseConnection{
     Database: "./test.db",
 }
 
-if err := connection.Connect(); err != nil {
+if err := connection.Connect("main"); err != nil {
     log.Fatalf("Error connecting to database: %s", err.Error())
 }
 
-// Database handle now lives in golangdb.Db
+// Database handle now lives in golangdb.Db["main"]
+```
+
+## TestDB
+```golang
+import (
+    "log"
+
+    "github.com/adampresley/golangdb"
+)
+
+connection := DatabaseConnection{
+    Engine: golangdb.TESTDB,
+}
+
+if err := connection.Connect("test"); err != nil {
+    log.Fatalf("Error connecting to database: %s", err.Error())
+}
+
+// Database handle now lives in golangdb.Db["test"]
 ```
 
 ## History
