@@ -4,7 +4,7 @@ This package is a simple abstraction I use to allow my projects to connect to va
 
 ## Version 0.3
 
-## MySQL
+### MySQL
 ```golang
 import (
     "log"
@@ -28,7 +28,7 @@ if err := connection.Connect("main"); err != nil {
 // Database handle now lives in golangdb.Db["main"]
 ```
 
-## MSSQL
+### MSSQL
 ```golang
 import (
     "log"
@@ -52,7 +52,7 @@ if err := connection.Connect("main"); err != nil {
 // Database handle now lives in golangdb.Db["main"]
 ```
 
-## SQLite
+### SQLite
 ```golang
 import (
     "log"
@@ -72,7 +72,7 @@ if err := connection.Connect("main"); err != nil {
 // Database handle now lives in golangdb.Db["main"]
 ```
 
-## TestDB
+### TestDB
 ```golang
 import (
     "log"
