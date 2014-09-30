@@ -2,6 +2,8 @@
 
 This package is a simple abstraction I use to allow my projects to connect to various databases through a single interface. 
 
+## Version 0.3
+
 ## MySQL
 ```golang
 import (
