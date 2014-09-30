@@ -5,4 +5,4 @@ import (
 )
 
 /* Global database connection handle used throughout your application */
-var Db *sql.DB
+var Db = make(map[string]*sql.DB)

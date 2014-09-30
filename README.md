@@ -70,6 +70,14 @@ if err := connection.Connect(); err != nil {
 // Database handle now lives in golangdb.Db
 ```
 
+## History
+
+* 2014-09-29
+    - Supports multiple connections by name
+    - Added support for [go-testdb](https://github.com/erikstmartin/go-testdb)
+* 2014-09-17
+    - Initial release
+
 ## License
 The MIT License (MIT)
 

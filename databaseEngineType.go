@@ -9,6 +9,7 @@ const (
 	SQLITE
 	MYSQL
 	MSSQL
+	TESTDB
 )
 
 var databaseEngineNames = map[DatabaseEngine]string{
@@ -16,6 +17,7 @@ var databaseEngineNames = map[DatabaseEngine]string{
 	SQLITE: "SQLite",
 	MYSQL:  "MySQL",
 	MSSQL:  "MSSQL",
+	TESTDB: "Test (fake) DB",
 }
 
 func (this *DatabaseEngine) ToString() string {

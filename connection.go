@@ -23,7 +23,7 @@ type DatabaseConnection struct {
 Connect to a database. This method will use the specified
 engine to determine how to connect.
 */
-func (this *DatabaseConnection) Connect() error {
+func (this *DatabaseConnection) Connect(connectionName string) error {
 	var db *sql.DB
 	var err error
 
@@ -36,13 +36,16 @@ func (this *DatabaseConnection) Connect() error {
 
 	case MSSQL:
 		db, err = ConnectMSSQL(this)
+
+	case TESTDB:
+		db, err = ConnectTestDB(this)
 	}
 
 	if err != nil {
 		return err
 	}
 
-	Db = db
+	Db[connectionName] = db
 	return nil
 }
 
@@ -60,6 +63,9 @@ func (this *DatabaseConnection) ToString() string {
 
 	case MSSQL:
 		return this.toMSSQLString()
+
+	case TESTDB:
+		return ""
 	}
 
 	return ""
