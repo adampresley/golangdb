@@ -20,6 +20,16 @@ var databaseEngineNames = map[DatabaseEngine]string{
 	TESTDB: "Test (fake) DB",
 }
 
+func GetDatabaseEngineFromName(name string) DatabaseEngine {
+	for k, v := range databaseEngineNames {
+		if v == name {
+			return k
+		}
+	}
+
+	return NONE
+}
+
 func (this *DatabaseEngine) ToString() string {
 	return databaseEngineNames[*this]
 }
