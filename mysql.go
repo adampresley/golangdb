@@ -20,7 +20,7 @@ func ConnectMySQL(connectionInfo *DatabaseConnection) (*sql.DB, error) {
 	/*
 	 * Create the connection
 	 */
-	log.Println("Connecting to MySQL database...")
+	log.Println("INFO - Connecting to MySQL database...")
 
 	db, err := sql.Open("mysql", connectionInfo.ToString())
 	if err != nil {

@@ -16,7 +16,7 @@ func ConnectMSSQL(connectionInfo *DatabaseConnection) (*sql.DB, error) {
 	/*
 	 * Create the connection
 	 */
-	log.Println("Connecting to MSSQL database...")
+	log.Println("INFO - Connecting to MSSQL database...")
 
 	db, err := sql.Open("mssql", connectionInfo.ToString())
 	if err != nil {

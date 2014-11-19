@@ -16,7 +16,7 @@ func ConnectTestDB(connectionInfo *DatabaseConnection) (*sql.DB, error) {
 	/*
 	 * Create the connection
 	 */
-	log.Println("Connecting to Go-TestDB database...")
+	log.Println("INFO - Connecting to Go-TestDB database...")
 
 	db, err := sql.Open("testdb", connectionInfo.ToString())
 	if err != nil {
