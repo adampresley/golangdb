@@ -1,5 +1,9 @@
 package golangdb
 
+import (
+	"strings"
+)
+
 /* Defines a type of database engine */
 type DatabaseEngine int
 
@@ -22,7 +26,7 @@ var databaseEngineNames = map[DatabaseEngine]string{
 
 func GetDatabaseEngineFromName(name string) DatabaseEngine {
 	for k, v := range databaseEngineNames {
-		if v == name {
+		if strings.ToLower(v) == strings.ToLower(name) {
 			return k
 		}
 	}
