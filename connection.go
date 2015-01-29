@@ -27,7 +27,7 @@ func (this *DatabaseConnection) Connect(connectionName string) error {
 	var db *sql.DB
 	var err error
 
-	switch (this.Engine) {
+	switch this.Engine {
 	case SQLITE:
 		db, err = ConnectSQLite(this)
 
@@ -54,7 +54,7 @@ This method converts a DatabaseConnection structure into a string
 appropriate for connecting to a database server.
 */
 func (this *DatabaseConnection) ToString() string {
-	switch (this.Engine) {
+	switch this.Engine {
 	case SQLITE:
 		return this.toSQLiteString()
 
@@ -76,7 +76,7 @@ func (this *DatabaseConnection) toMySQLString() string {
 }
 
 func (this *DatabaseConnection) toMSSQLString() string {
-	return fmt.Sprintf("Server=%s;Port=%s;User Id=%s;Password=%s;Database=%s", this.Address, this.Port, this.UserName, this.Password, this.Database)
+	return fmt.Sprintf("Server=%s;Port=%d;User Id=%s;Password=%s;Database=%s", this.Address, this.Port, this.UserName, this.Password, this.Database)
 }
 
 func (this *DatabaseConnection) toSQLiteString() string {
